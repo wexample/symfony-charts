@@ -1,0 +1,19 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Wexample\SymfonyCharts\Api\Controller\:
+        resource: '../../Api/Controller/*'
+        tags: ['controller.service_arguments']
+
+    Wexample\SymfonyCharts\Api\Normalizer\:
+        resource: '../../Api/Normalizer/*'
+
+    Wexample\SymfonyCharts\Service\:
+        resource: '../../Service/*'
+
+    Wexample\SymfonyCharts\Service\ChartPointProviderRegistry:
+        arguments:
+            $providers: !tagged_iterator wexample_symfony_charts.chart_point_provider

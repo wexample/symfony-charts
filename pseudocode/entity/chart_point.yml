@@ -1,0 +1,139 @@
+items:
+  - name: ChartPoint
+    type: class
+    description: "One value of one series of one chart: a chart is the list of its points.\nAn entity without an ORM mapping — a point is computed when it is asked for,\nfrom whatever the application stores — so that a chart travels the road\nevery list of the stack travels: normalizer, dto, generated `ChartPoint.ts`\nand its repository, which the chart component reads. Doctrine skips a class\ncarrying no `#[ORM\\Entity]`.\n`series` is a key the chart component knows a type by: any key for a line\nor a bar, `load` and `capacity` for a capacity chart, `actual`, `forecast`,\n`low` and `high` for a forecast."
+    properties:
+      - name: id
+        type: Symfony\Component\Uid\Uuid
+      - name: chart
+        type: string
+      - name: series
+        type: string
+      - name: seriesLabel
+        type: string
+        nullable: true
+        default: null
+      - name: x
+        type: string
+      - name: position
+        type: int
+        default: 0
+      - name: 'y'
+        type: float
+        nullable: true
+        default: null
+      - name: color
+        type: string
+        nullable: true
+        default: null
+    methods:
+      - type: method
+        name: buildEntityPath
+        parameters:
+          - type: string
+            name: className
+        return:
+          type: string
+      - type: method
+        name: getEntityKeyName
+        return:
+          type: string
+      - type: method
+        name: getEntityShortName
+        return:
+          type: string
+      - type: method
+        name: getId
+        return:
+          type: Symfony\Component\Uid\Uuid
+      - type: method
+        name: setId
+        parameters:
+          - type: Symfony\Component\Uid\Uuid
+            name: id
+        return:
+          type: void
+      - type: method
+        name: getTableizedName
+        return:
+          type: string
+      - type: method
+        name: getCamelName
+        return:
+          type: string
+      - type: method
+        name: __construct
+        parameters:
+          - type: string
+            name: chart
+          - type: string
+            name: series
+          - type: string
+            name: x
+      - type: method
+        name: idFor
+        parameters:
+          - type: string
+            name: chart
+          - type: string
+            name: series
+          - type: string
+            name: x
+        return:
+          type: Uuid
+      - type: method
+        name: getChart
+        return:
+          type: string
+      - type: method
+        name: getSeries
+        return:
+          type: string
+      - type: method
+        name: getSeriesLabel
+        return:
+          type: string
+      - type: method
+        name: setSeriesLabel
+        parameters:
+          - type: string
+            name: seriesLabel
+        return:
+          type: self
+      - type: method
+        name: getX
+        return:
+          type: string
+      - type: method
+        name: getPosition
+        return:
+          type: int
+      - type: method
+        name: setPosition
+        parameters:
+          - type: int
+            name: position
+        return:
+          type: self
+      - type: method
+        name: getY
+        return:
+          type: float
+      - type: method
+        name: setY
+        parameters:
+          - type: float
+            name: 'y'
+        return:
+          type: self
+      - type: method
+        name: getColor
+        return:
+          type: string
+      - type: method
+        name: setColor
+        parameters:
+          - type: string
+            name: color
+        return:
+          type: self
