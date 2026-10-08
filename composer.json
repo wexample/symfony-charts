@@ -1,7 +1,7 @@
 {
   "name": "wexample/symfony-charts",
   "description": "Charts for Symfony: chart points as entities, served by one list endpoint",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "type": "library",
   "license": "MIT",
   "autoload": {
@@ -23,7 +23,7 @@
   "require": {
     "php": ">=8.5",
     "wexample/php-pseudocode": ">=2.2.0",
-    "wexample/symfony-api": ">=11.0.0",
+    "wexample/symfony-api": ">=12.0.0",
     "wexample/symfony-helpers": ">=15.0.0",
     "wexample/symfony-pseudocode": ">=3.0.0",
     "symfony/uid": ">=6.2"
