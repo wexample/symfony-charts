@@ -1,7 +1,8 @@
 # Charts: extract network's chart layer (series points API + yearly charts)
 
 Opened: 2026-09-24
-Updated: 2026-09-24
+Closed: 2026-10-09
+Updated: 2026-10-09
 Author: agent:archeology
 
 ## Read this first — status of this todo
@@ -47,3 +48,7 @@ Knowledge: `/home/weeger/Desktop/WIP/WEB/WEXAMPLE/NETWORK/local/network/.wex/kno
 ## Acceptance
 
 - PHP unit tests for SeriesBuilder; demo page rendering a line and a bar chart from a fixture endpoint.
+
+## Clos le 2026-10-09 (revue de l'extraction, agent:main)
+
+Fait autrement : `ChartPoint` non persisté, `ChartPointProviderInterface`, `/api/chart-point/list?chart=`, `ChartPointHelper::series()` (trous en null), ECharts dans symfony-charts-ds (`chart()`, `chart_sparkline()`), symfony-charts-demo. Les deux restes passent dans `chart-period.md`.
