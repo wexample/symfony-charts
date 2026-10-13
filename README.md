@@ -1,6 +1,6 @@
 # symfony-charts
 
-Version: 2.0.0
+Version: 2.0.1
 
 ## What this package holds
 
@@ -83,8 +83,8 @@ Visit the [Wexample Suite documentation](https://docs.wexample.com) for the comp
 
 - php: >=8.5
 - wexample/php-pseudocode: >=2.2.0
-- wexample/symfony-api: >=12.0.0
-- wexample/symfony-helpers: >=15.0.0
+- wexample/symfony-api: >=13.0.0
+- wexample/symfony-helpers: >=16.0.0
 - wexample/symfony-pseudocode: >=3.0.0
 - symfony/uid: >=6.2
 
