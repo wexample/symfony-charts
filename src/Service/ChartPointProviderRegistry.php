@@ -10,16 +10,19 @@ use Wexample\SymfonyCharts\Interface\ChartPointProviderInterface;
 class ChartPointProviderRegistry
 {
     /** @var array<string, ChartPointProviderInterface> */
-    private array $providers = [];
+    private readonly array $providers;
 
     /**
      * @param iterable<ChartPointProviderInterface> $providers
      */
     public function __construct(iterable $providers)
     {
+        $byChart = [];
         foreach ($providers as $provider) {
-            $this->providers[$provider::getChartName()] = $provider;
+            $byChart[$provider::getChartName()] = $provider;
         }
+
+        $this->providers = $byChart;
     }
 
     public function get(string $chart): ?ChartPointProviderInterface
