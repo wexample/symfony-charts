@@ -1,6 +1,6 @@
 # symfony-charts
 
-Version: 3.0.0
+Version: 3.0.1
 
 ## What this package holds
 
@@ -87,7 +87,7 @@ The suite includes packages for configuration management, file handling, prompts
 - php: >=8.5
 - wexample/php-pseudocode: >=2.2.0
 - wexample/symfony-api: >=14.0.0
-- wexample/symfony-helpers: >=17.0.0
+- wexample/symfony-helpers: >=18.0.0
 - wexample/symfony-pseudocode: >=4.0.0
 - symfony/uid: >=6.2
 
