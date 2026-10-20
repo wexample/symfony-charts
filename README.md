@@ -1,6 +1,6 @@
 # symfony-charts
 
-Version: 2.1.0
+Version: 3.0.0
 
 ## What this package holds
 
@@ -54,12 +54,17 @@ class LoomLoadChartPointProvider implements ChartPointProviderInterface
 
 `assets/Entity/ChartPoint.ts`, `assets/Repository/ChartPointRepository.ts` and `assets/Common/generated*.ts` are generated, never edited: after a change to the entity, regenerate them from an app as `symfony-api`'s `usage/entity-export-pipeline` says, pointing the paths at this package, and delete the foreign `.yml` the pseudocode command adds before the json export. An app adds `generatedRepositories` and `generatedEntitySchemas` to its api client.
 
+## A period
+
+`GET /api/chart-point/list` takes `from` and `to` besides `chart`: ISO dates, `to` excluded, what a chart following the page's period-nav sends (`chart(…, { period: true })` in symfony-charts-ds). The provider reads them from the request it is given; one with no period ignores them.
+
 ## Table of Contents
 
 - [What this package holds](#what-this-package-holds)
 - [A point](#a-point)
 - [Serving a chart](#serving-a-chart)
 - [Front artifacts](#front-artifacts)
+- [A period](#a-period)
 - [Integration in the Suite](#integration-in-the-suite)
 - [Dependencies](#dependencies)
 - [Versioning & Compatibility Policy](#versioning--compatibility-policy)
