@@ -1,6 +1,6 @@
 # symfony-charts
 
-Version: 3.0.3
+Version: 4.0.0
 
 Charts for Symfony: chart points as entities, served by one list endpoint
 

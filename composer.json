@@ -1,7 +1,7 @@
 {
   "name": "wexample/symfony-charts",
   "description": "Charts for Symfony: chart points as entities, served by one list endpoint",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "type": "library",
   "license": "MIT",
   "autoload": {
