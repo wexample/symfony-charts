@@ -9,7 +9,7 @@ use Wexample\SymfonyCharts\Entity\ChartPoint;
  * What an application implements to serve a chart: a name, and the points of
  * that chart for a request, whose locale words the categories. Autoconfigured:
  * implementing it is enough for
- * `GET /api/chart-point/list?chart=<name>` to answer.
+ * `GET /_api/chart-point/list?chart=<name>` to answer.
  */
 interface ChartPointProviderInterface
 {

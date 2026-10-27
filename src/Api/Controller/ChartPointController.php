@@ -20,7 +20,7 @@ use Wexample\SymfonyHelpers\Controller\AbstractController;
  * asks for, read by the provider from the request — one with no period
  * ignores them. A filter would be an option of its own, declared here.
  */
-#[Route(path: 'api/chart-point/', name: 'api_chart_point_')]
+#[Route(path: '_api/chart-point/', name: 'api_chart_point_')]
 class ChartPointController extends AbstractApiController
 {
     final public const string ROUTE_LIST = 'list';
