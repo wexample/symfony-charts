@@ -42,7 +42,7 @@ class LoomLoadChartPointProvider implements ChartPointProviderInterface
 }
 ```
 
-`GET /_api/chart-point/list?chart=loom-load` then answers with the standard entity collection (`data.items` of `{type, entity, metadata, relationships}`). An unknown chart name is a 404. The query holds the chart name and nothing else — `symfony-api` refuses an option no attribute declares, so a period or a filter is not passed yet. The provider reads the request's locale to word the categories: `symfony-translations` answers an api call in the language of the page it comes from.
+`GET /_api/chart-point/list?chart=loom-load` then answers with the standard entity collection (`data.items` of `{type, entity, metadata, relationships}`). An unknown chart name is a 404. The query holds the chart name, a period and a scope — `symfony-api` refuses an option no attribute declares. The provider reads the request's locale to word the categories: `symfony-translations` answers an api call in the language of the page it comes from.
 
 `ChartPointHelper::series()` builds one series over a whole axis: one point per category, in the axis order, `missing` (null by default) where the values hold nothing. `seriesFromList()` takes the values in the order of the categories.
 
@@ -53,3 +53,7 @@ class LoomLoadChartPointProvider implements ChartPointProviderInterface
 ## A period
 
 `GET /_api/chart-point/list` takes `from` and `to` besides `chart`: ISO dates, `to` excluded, what a chart following the page's period-nav sends (`chart(…, { period: true })` in symfony-charts-ds). The provider reads them from the request it is given; one with no period ignores them.
+
+## A scope
+
+`scope` is what the chart is about when a page draws it for one record among several — a project's activity, an account's spend —, by its id. The provider reads it from the request and checks it as it checks any access: a scope the user cannot read is a 404 or a 403, never another record's points. `chart(…, { scope: project.id })` in symfony-charts-ds sends it.

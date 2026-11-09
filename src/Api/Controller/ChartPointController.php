@@ -17,8 +17,10 @@ use Wexample\SymfonyHelpers\Controller\AbstractController;
  * entity, which the generated `ChartPointRepository.ts` calls without being
  * told where it is. Which chart is the `chart` option; `from` and `to` (ISO
  * dates, `to` excluded) the period a chart following the page's period-nav
- * asks for, read by the provider from the request — one with no period
- * ignores them. A filter would be an option of its own, declared here.
+ * asks for; `scope` what the chart is about — a project, an account, by its
+ * id —, for a chart a page draws of one record among several. The provider
+ * reads them from the request, checks the scope as it checks any access,
+ * and ignores what it has no use for.
  */
 #[Route(path: '_api/chart-point/', name: 'api_chart_point_')]
 class ChartPointController extends AbstractApiController
@@ -31,10 +33,13 @@ class ChartPointController extends AbstractApiController
 
     final public const string QUERY_OPTION_TO = 'to';
 
+    final public const string QUERY_OPTION_SCOPE = 'scope';
+
     #[Route(path: 'list', name: self::ROUTE_LIST, methods: AbstractController::ROUTE_OPTIONS_METHOD_ONLY_GET, options: AbstractController::ROUTE_OPTIONS_ONLY_EXPOSE)]
     #[StringQueryOption(key: self::QUERY_OPTION_CHART, default: '')]
     #[StringQueryOption(key: self::QUERY_OPTION_FROM, default: '')]
     #[StringQueryOption(key: self::QUERY_OPTION_TO, default: '')]
+    #[StringQueryOption(key: self::QUERY_OPTION_SCOPE, default: '')]
     public function list(
         Request $request,
         ChartPointProviderRegistry $registry,
