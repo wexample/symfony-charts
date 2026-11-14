@@ -16,4 +16,4 @@ services:
 
     Wexample\SymfonyCharts\Service\ChartPointProviderRegistry:
         arguments:
-            $providers: !tagged_iterator wexample_symfony_charts.chart_point_provider
+            $providers: !tagged_locator { tag: wexample_symfony_charts.chart_point_provider, default_index_method: getChartName }
