@@ -2,6 +2,7 @@
 
 namespace Wexample\SymfonyCharts\Api\Controller;
 
+use Wexample\SymfonyApi\Api\Attribute\ApiAccess;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Attribute\Route;
@@ -23,6 +24,7 @@ use Wexample\SymfonyHelpers\Controller\AbstractController;
  * and ignores what it has no use for.
  */
 #[Route(path: '_api/chart-point/', name: 'api_chart_point_')]
+#[ApiAccess(ApiAccess::CONTROLLER, "the chart's provider checks the scope it is asked about")]
 class ChartPointController extends AbstractApiController
 {
     final public const string ROUTE_LIST = 'list';
