@@ -2,10 +2,10 @@
 
 namespace Wexample\SymfonyCharts\Api\Controller;
 
-use Wexample\SymfonyApi\Api\Attribute\ApiAccess;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Attribute\Route;
+use Wexample\SymfonyApi\Api\Attribute\ApiAccess;
 use Wexample\SymfonyApi\Api\Attribute\QueryOption\StringQueryOption;
 use Wexample\SymfonyApi\Api\Class\ApiResponse;
 use Wexample\SymfonyApi\Api\Controller\AbstractApiController;
